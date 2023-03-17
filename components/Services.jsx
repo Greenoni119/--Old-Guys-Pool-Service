@@ -10,10 +10,9 @@ const Services = () => {
     <div>
 
 <div name='Services' className=' w-full bg-white pt-20 pb-20'>
-              <div className='max-w-screen-1xl mx-auto flex flex-col items-center gap-20 justify-center h-full px-4 md:flex-row'>
-                <div> 
-                  
-                    <p className='text-2xl m-5 text-amber-600 inline border-b-4 border-blue-500 md:text-4xl lg:text-5xl 2xl:text-center'> Why We&apos;re Different </p>  
+              <div className='max-w-screen-1xl mx-auto text-center items-center gap-20 justify-center h-full px-4 md:flex-row'>
+                <div>
+                    <p className=' text-2xl m-5 text-amber-600 inline border-b-4 border-blue-500 md:text-4xl lg:text-5xl 2xl:text-center'> Why We&apos;re Different </p>  
                 </div>
                
 
