@@ -128,3 +128,33 @@ border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   }
 }
+
+@media screen and (max-width: 1800px){
+  #face {
+    width: 1050px;
+    height: 600px;
+  }
+  
+  }
+
+
+
+@media screen and (max-width: 1600px){
+  #face {
+    width: 1050px;
+    height: 450px;
+  }
+  
+  }
+
+
+
+
+@media screen and (max-width: 700px){
+  #face {
+    width: 1050px;
+    height: 250px;
+    
+  }
+  
+  }
