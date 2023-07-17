@@ -40,7 +40,7 @@ section .wave{
   left:0;
   width:100%;
   height:100px;
-  background-image: url(../public/wave.png);
+  background: url(webpack:///mini-css-extract-plugin/_next/static/media/wave.f8bed9c7.png);
   background-size: 1000px 100px;
   animation: alternate;
 }
