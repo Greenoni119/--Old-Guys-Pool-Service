@@ -35,7 +35,7 @@ const HomePage = () => {
                 
               </div>
 
-              <section className=''>
+              <section>
                 <div className='wave wave1'></div>
                 <div className='wave wave2'></div>
                 <div className='wave wave3'></div>
