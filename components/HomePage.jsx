@@ -29,13 +29,11 @@ const HomePage = () => {
                 <a href="tel:925-437-1526" className='text-white border-solid border-4 border-amber-500 rounded-full px-5 py-2 hover:scale-105 duration-200 '>Read More</a>
                 </div>
                 
-
-
                 </div>
                 
               </div>
 
-              <section>
+              <section className="relative mt-20">
                 <div className='wave wave1'></div>
                 <div className='wave wave2'></div>
                 <div className='wave wave3'></div>
