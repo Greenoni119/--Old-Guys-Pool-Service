@@ -49,9 +49,3 @@ const HomePage = () => {
 }
 
 export default HomePage
-
-{/*
-
-<Image src={logo} id='logo' className='mx-auto w-2/3 md:w-2/3 max-w-lg   rounded-full' />
-390 844
-*/}
