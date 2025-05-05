@@ -248,7 +248,7 @@ const Price = () => {
                   </svg>
                 </div>
                 <h4 className='text-xl font-semibold mb-2'>No Hidden Fees</h4>
-                <p className='text-primary-light'>We're transparent about all costs</p>
+                <p className='text-primary-light'>We&apos;re transparent about all costs</p>
               </div>
               
               <div className='flex flex-col items-center'>
@@ -268,7 +268,7 @@ const Price = () => {
                   </svg>
                 </div>
                 <h4 className='text-xl font-semibold mb-2'>No BS</h4>
-                <p className='text-primary-light'>We're too old for that</p>
+                <p className='text-primary-light'>We&apos;re too old for that</p>
               </div>
             </div>
             

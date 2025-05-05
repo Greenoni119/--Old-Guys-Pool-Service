@@ -103,7 +103,7 @@ const Reviews = () => {
                       </div>
                     </div>
                     
-                    <p className='text-gray-600 italic'>"{review.review}"</p>
+                    <p className='text-gray-600 italic'>&quot;{review.review}&quot;</p>
                   </div>
                   
                   {/* Review metadata */}
