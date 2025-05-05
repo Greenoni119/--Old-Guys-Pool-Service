@@ -1,130 +1,342 @@
-@import url('https://fonts.googleapis.com/css2?family=BioRhyme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+/* Modern Color Scheme */
+:root {
+  --primary: #0f172a;
+  --primary-light: #1e293b;
+  --secondary: #06b6d4;
+  --accent: #f97316;
+  --light: #f8fafc;
+  --dark: #0f172a;
+  --gradient-blue: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+}
+
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-}
-@layer base{
-  html{
-    font-family: 'BioRhyme', serif; }
-}
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--light);
+  color: var(--dark);
+  scroll-behavior: smooth;
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
-#para{
-  line-height: 1.3;
-}
-section{
+
+/* Section divider styles */
+.section-divider {
   position: relative;
-  width:100%;
-  height:27vh;
-  overflow:hidden;
+  height: 80px;
+  overflow: hidden;
 }
-section .wave{
+
+.divider-curve {
   position: absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  height:100px;
-  background:url(../public/wave.png);
-  background-size: 1000px 100px;
-  animation: alternate;
-}
-section .wave.wave1{
-  animation: animate 10s linear infinite alternate;
-  opacity:1;
-animation-delay:0s;
-  bottom:0;
-}
-section .wave.wave2{
-  animation: animate2 5s linear infinite alternate;
-  opacity:0.5;
-  animation-delay:-5s;
-  bottom:10px;
-}
-section .wave.wave3{
-  animation: animate 15s linear infinite alternate;
-  opacity:0.2;
-  animation-delay:-2s;
-  bottom:15;
-}
-section .wave.wave4{
-  animation: animate2 7s linear infinite alternate;
-  opacity:0.7;
-  animation-delay:-5s;
-  bottom:10px;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes animate{
-  0%
-  {
-    background-position-x:0;
-  }
-  100%
-  {
-    background-position-x:1000px;
-  }
-
-
-}
-@keyframes animate2{
-  0%
-  {
-    background-position-x:0;
-  }
-  100%
-  {
-    background-position-x:-1000px;
-  }
-
-
-}
-#logo{
-  animation: logo_animate 8s ease-in-out infinite 1s;
-  box-shadow:9px rgb(225, 225, 225 /30%);
+/* Curved section transitions */
+.curve-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
 
-@keyframes logo_animate{
-  0%{
-border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+.curve-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 70px;
+}
+
+.curve-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.curve-top svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 70px;
+}
+
+/* Animation speed control */
+:root {
+  --animation-speed: 1;
+}
+
+/* Logo styling */
+#logo {
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+}
+
+/* Modern Card styling */
+.card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+}
+
+.card-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-highlight {
+  position: relative;
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.15);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.card-highlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--gradient-blue);
+}
+
+/* Water ripple effect */
+.water-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.water-ripple::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(6, 182, 212, 0.15) 0%, rgba(6, 182, 212, 0) 70%);
+  transform: scale(0);
+  opacity: 0;
+  animation: ripple 2.5s ease-out infinite;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
   }
-  50%{
-    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
-  }
-  100%{
-    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  100% {
+    transform: scale(3);
+    opacity: 0;
   }
 }
 
-.card{
-  animation: card_animate 8s ease-in-out infinite 1s;
-  box-shadow:9px rgb(225, 225, 225 /30%);
+/* Bubble animations */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.8), rgba(6, 182, 212, 0.2));
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: bubble-rise linear infinite;
+  z-index: 1;
 }
 
-@keyframes card_animate{
-  0%{
-border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
   }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.2);
+    opacity: 0;
+  }
+}
 
-  50%{
-    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
-  }
+/* Parallax effects */
+.parallax {
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+  will-change: transform;
+  transform-style: preserve-3d;
+}
 
-  100%{
-    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+.parallax-bg {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  top: -5%;
+  left: -5%;
+  object-fit: cover;
+  z-index: -1;
+  transition: transform 0.6s cubic-bezier(0.2, 0, 0.4, 1);
+}
+
+.parallax-slow {
+  transform: translateZ(-10px) scale(2);
+}
+
+.parallax-medium {
+  transform: translateZ(-5px) scale(1.5);
+}
+
+.parallax-fast {
+  transform: translateZ(0) scale(1);
+}
+
+/* Section styling */
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-divider {
+  position: relative;
+  height: 120px;
+  margin-top: -120px;
+  z-index: 2;
+}
+
+.divider-curve {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* Modern glass morphism */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+}
+
+.glass-dark {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Button styles */
+.btn-primary {
+  background: var(--gradient-blue);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.35);
+}
+
+.btn-secondary {
+  background: var(--light);
+  color: var(--primary);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Custom animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Floating bubbles */
+.bubble-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
 }
